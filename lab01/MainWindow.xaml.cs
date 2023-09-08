@@ -24,5 +24,33 @@ namespace lab01
         {
             InitializeComponent();
         }
+
+        private void UsernameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            string usuario = UsernameTextBox.Text;
+            string contra = PasswordBox.Password;
+
+            if(usuario == "Renzo" && contra =="1234")
+            {
+                ResultLabel.Content = "Inicio de sesion exitoso";
+
+
+                Window1 window = new Window1();
+
+                this.Close();
+                window.Show();
+            }
+            else
+            {
+                ResultLabel.Content = "Credenciales Incorrectas.";
+            }
+        }
+
+        
     }
 }

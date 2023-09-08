@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button />
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="#F0F0F0" Offset="0" />
+                <GradientStop Color="#D0D0D0" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border BorderBrush="#007ACC" BorderThickness="2" CornerRadius="10" Margin="50,50,50,50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Inicio de Sesión" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="0,20,0,20" />
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                    <TextBox x:Name="UsernameTextBox"  Width="250" Height="30" Margin="10" />
+                    <PasswordBox x:Name="PasswordBox"  Width="250" Height="30" Margin="10"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2">
+                    <Button  Content="Iniciar Sesión" HorizontalAlignment="Center" Width="150" Height="30" Grid.Row="1" Margin="0,20" Click="LoginButton_Click"/>
+                    <Label  x:Name="ResultLabel" Content=""  HorizontalAlignment="Center" Grid.Row="1" Margin="0,20" Foreground="Red" FontWeight="Bold" />
+                </StackPanel>
+                
+            </Grid>
+        </Border>
     </Grid>
 </Window>
